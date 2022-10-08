@@ -5,7 +5,7 @@ const Header = () => {
   return (
     <header className="flex items-center justify-center bg-blue-dark h-20">
       <div className="flex items-center justify-between max-w-6xl w-full ">
-        <picture className="flex items-center justify-between w-16">
+        <picture className="flex items-center justify-between w-16 drop-shadow">
           <img src="/img/logo-seprog.png" alt="logo seprog" />
           <img src="/img/seprog.png" alt="seprog"></img>
         </picture>
