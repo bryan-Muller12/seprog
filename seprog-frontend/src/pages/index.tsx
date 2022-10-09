@@ -143,7 +143,10 @@ const Home: NextPage = () => {
       {/* Fim do Hero */}
 
       {/* Começo do sobre */}
-      <section className="flex items-center justify-center bg-blue-dark text-white py-12">
+      <section
+        id="sobre"
+        className="flex items-center justify-center bg-blue-dark text-white py-12"
+      >
         <div className="flex flex-col items-center  max-w-6xl w-full py-8">
           <div className="flex items-center gap-24">
             <picture>
@@ -174,7 +177,10 @@ const Home: NextPage = () => {
             </div>
           </div>
 
-          <div className="flex flex-col items-center  gap-24 py-32">
+          <div
+            id="organizadores"
+            className="flex flex-col items-center  gap-24 py-32"
+          >
             <div className="flex flex-col items-center gap-16">
               <h2 className="font-bold text-4xl">Aprenda com os Melhores!</h2>
 
@@ -191,7 +197,10 @@ const Home: NextPage = () => {
       </section>
       {/* Fim do Hero */}
 
-      <section className="flex items-center justify-center bg-gradient-to-b from-blue-dark to-blue-light text-white pb-20">
+      <section
+        id="programacao"
+        className="flex items-center justify-center bg-gradient-to-b from-blue-dark to-blue-light text-white pb-20"
+      >
         <div className="flex flex-col items-center  max-w-6xl w-full ">
           <Tab.Group>
             <div className=" flex items-center rounded-3xl bg-gray shadow ">
@@ -230,6 +239,42 @@ const Home: NextPage = () => {
               </Tab.Panels>
             </div>
           </Tab.Group>
+        </div>
+      </section>
+
+      <section className="flex items-center justify-center bg-gradient-to-b from-blue-light to-blue-dark text-white py-16">
+        <div className="flex flex-col items-center gap-8 max-w-6xl w-full">
+          <h2 className="text-4xl font-bold drop-shadow">
+            Localização do evento
+          </h2>
+
+          <iframe
+            className=" w-full rounded-[48px] border-4 border-yellow shadow"
+            width="100%"
+            height="600"
+            frameBorder="0"
+            scrolling="no"
+            marginHeight={0}
+            marginWidth={0}
+            src="https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=en&amp;q=Federal%20University%20of%20Itajub%C3%A1,%20university,%20Itajub%C3%A1,%20Brazil+(My%20Business%20Name)&amp;t=&amp;z=16&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
+          >
+            <a href="https://www.maps.ie/distance-area-calculator.html">
+              measure area map
+            </a>
+          </iframe>
+
+          <picture>
+            <img className="w-20" src="/img/mapa.png" alt="icone mapa" />
+          </picture>
+
+          <span className="text-4xl font-bold">SEPROG</span>
+          <div className="flex flex-col gap-4 items-center text-xl">
+            <span className=" text-2xl font-bold">
+              Universidade Federal de Itajubá
+            </span>
+            <span>Avenida B P S, 1303 - Pinheirinho</span>
+            <span>Itajubá - MG</span>
+          </div>
         </div>
       </section>
     </>
