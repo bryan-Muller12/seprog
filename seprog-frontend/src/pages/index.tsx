@@ -1,6 +1,11 @@
 import type { NextPage } from "next";
 import CallButton from "../components/CallButton";
 import ParticipantButton from "../components/ParticipantButton";
+import { Tab } from "@headlessui/react";
+
+function classNames(...classes: any) {
+  return classes.filter(Boolean).join(" ");
+}
 
 const Home: NextPage = () => {
   let participantData = [
@@ -52,6 +57,61 @@ const Home: NextPage = () => {
       },
     },
   ];
+
+  let tabsData = [
+    {
+      id: 1,
+      tab: {
+        day: "Segunda-Feira (19/09)",
+        person: "buron.solutions",
+        descrition: "Desenvolvimento de um portifolio pessoal",
+      },
+      content: {
+        title: "Desonvolvimento de um portifolio pessoal",
+        text: "Teoria: O mini-curso tera como objetivo o ensinamento do ciclo basico do desenvolvimento web, contemplano HTML, CSS e JS.",
+      },
+    },
+
+    {
+      id: 2,
+      tab: {
+        day: "Terça-Feira (20/09)",
+        person: "buron.solutions",
+        descrition: "Desenvolvimento de um portifolio pessoal",
+      },
+      content: {
+        title: "Titulo 2",
+        text: "Teoria: O mini-curso tera como objetivo o ensinamento do ciclo basico do desenvolvimento web, contemplano HTML, CSS e JS.",
+      },
+    },
+
+    {
+      id: 3,
+      tab: {
+        day: "Quarta-Feira (21/09)",
+        person: "buron.solutions",
+        descrition: "Desenvolvimento de um portifolio pessoal",
+      },
+      content: {
+        title: "Titulo 2",
+        text: "Teoria: O mini-curso tera como objetivo o ensinamento do ciclo basico do desenvolvimento web, contemplano HTML, CSS e JS.",
+      },
+    },
+
+    {
+      id: 4,
+      tab: {
+        day: "Quinta-Feira (22/09)",
+        person: "buron.solutions",
+        descrition: "Desenvolvimento de um portifolio pessoal",
+      },
+      content: {
+        title: "Titulo 2",
+        text: "Teoria: O mini-curso tera como objetivo o ensinamento do ciclo basico do desenvolvimento web, contemplano HTML, CSS e JS.",
+      },
+    },
+  ];
+
   return (
     <>
       {/* Começo do Hero */}
@@ -130,6 +190,48 @@ const Home: NextPage = () => {
         </div>
       </section>
       {/* Fim do Hero */}
+
+      <section className="flex items-center justify-center bg-gradient-to-b from-blue-dark to-blue-light text-white pb-20">
+        <div className="flex flex-col items-center  max-w-6xl w-full ">
+          <Tab.Group>
+            <div className=" flex items-center rounded-3xl bg-gray shadow ">
+              <Tab.List as="ul" className="flex flex-col items-start ">
+                {tabsData.map((tab, index) => (
+                  <Tab
+                    as="li"
+                    key={index}
+                    className={({ selected }) =>
+                      classNames(
+                        "bg-blue-dark rounded-r-2xl first:rounded-tl-2xl first:rounded-tr-none last:rounded-bl-2xl last:rounded-br-none shadow w-80",
+                        selected ? "bg-blue-light w-[360px] z-10" : ""
+                      )
+                    }
+                  >
+                    <button className="flex flex-col items-start gap-2 text-xl text-left px-5 py-3">
+                      <h3 className=" text-2xl font-bold">{tab.tab.day}</h3>
+                      <span className="font-bold">{tab.tab.person}</span>
+                      <p> {tab.tab.descrition}</p>
+                    </button>
+                  </Tab>
+                ))}
+              </Tab.List>
+
+              <Tab.Panels>
+                {tabsData.map((tab, index) => (
+                  <Tab.Panel
+                    key={index}
+                    className="bg-blue-light m-16 p-6 rounded-3xl shadow"
+                  >
+                    <h2>{tab.content.title}</h2>
+
+                    <p>{tab.content.text}</p>
+                  </Tab.Panel>
+                ))}
+              </Tab.Panels>
+            </div>
+          </Tab.Group>
+        </div>
+      </section>
     </>
   );
 };
